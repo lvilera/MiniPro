@@ -1,0 +1,138 @@
+{
+  "promoCodes": {
+    "COKE-NBA-2024": {
+      "sponsor": "Coca-Cola",
+      "league": "NBA",
+      "cardCount": 5,
+      "description": "Coca-Cola Basketball Pack",
+      "color": "#E11D21",
+      "guaranteed": null
+    },
+    "NIKE-MLB-PROMO": {
+      "sponsor": "Nike",
+      "league": "MLB",
+      "cardCount": 5,
+      "description": "Nike Baseball Pack",
+      "color": "#FF6A00",
+      "guaranteed": null
+    },
+    "TIMHORTONS-NHL": {
+      "sponsor": "Tim Hortons",
+      "league": "NHL",
+      "cardCount": 5,
+      "description": "Tim Hortons Hockey Pack",
+      "color": "#C8102E",
+      "guaranteed": null
+    },
+    "GATORADE-LEGEND": {
+      "sponsor": "Gatorade",
+      "league": "all",
+      "cardCount": 3,
+      "description": "Gatorade Legendary Pack",
+      "color": "#FF6600",
+      "guaranteed": "rare"
+    },
+    "SUBWAY-SPORTS": {
+      "sponsor": "Subway",
+      "league": "all",
+      "cardCount": 4,
+      "description": "Subway All-Sports Pack",
+      "color": "#00893E",
+      "guaranteed": null
+    }
+  },
+  "teams": [
+    {
+      "name": "Red Sox",
+      "league": "MLB",
+      "scheme": "scheme-cosmos",
+      "icon": "⚾",
+      "primaryColor": "#BD3039"
+    },
+    {
+      "name": "Yankees",
+      "league": "MLB",
+      "scheme": "",
+      "icon": "⚾",
+      "primaryColor": "#0C2340"
+    },
+    {
+      "name": "Dodgers",
+      "league": "MLB",
+      "scheme": "scheme-aqua",
+      "icon": "⚾",
+      "primaryColor": "#005A9C"
+    },
+    {
+      "name": "Lakers",
+      "league": "NBA",
+      "scheme": "scheme-solar",
+      "icon": "🏀",
+      "primaryColor": "#FDB927"
+    },
+    {
+      "name": "Celtics",
+      "league": "NBA",
+      "scheme": "scheme-aqua",
+      "icon": "🏀",
+      "primaryColor": "#007A33"
+    },
+    {
+      "name": "Warriors",
+      "league": "NBA",
+      "scheme": "scheme-cosmos",
+      "icon": "🏀",
+      "primaryColor": "#1D428A"
+    },
+    {
+      "name": "Maple Leafs",
+      "league": "NHL",
+      "scheme": "scheme-cosmos",
+      "icon": "🏒",
+      "primaryColor": "#00205B"
+    },
+    {
+      "name": "Canadiens",
+      "league": "NHL",
+      "scheme": "",
+      "icon": "🏒",
+      "primaryColor": "#AF1E2D"
+    },
+    {
+      "name": "Bruins",
+      "league": "NHL",
+      "scheme": "scheme-thunder",
+      "icon": "🏒",
+      "primaryColor": "#FFB81C"
+    }
+  ],
+  "playerNames": {
+    "firstNames": [
+      "Mike", "John", "Alex", "Chris", "David", "Ryan", "Kevin", "Tom", "Jake", "Matt",
+      "Steve", "Brian", "James", "Robert", "Michael", "Daniel", "Joseph", "Andrew", "Mark", "Paul",
+      "Eric", "Jason", "Kyle", "Tyler", "Adam", "Sean", "Justin", "Brandon", "Derek", "Aaron",
+      "Josh", "Tim", "Nick", "Ben", "Sam", "Jordan", "Luke", "Connor", "Blake", "Cole",
+      "Dylan", "Evan", "Ian", "Nathan", "Tyler", "Zach", "Trevor", "Austin", "Hunter", "Cody"
+    ],
+    "lastNames": [
+      "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez",
+      "Anderson", "Taylor", "Thomas", "Moore", "Jackson", "Martin", "Lee", "Thompson", "White", "Harris",
+      "Clark", "Lewis", "Walker", "Hall", "Allen", "Young", "King", "Wright", "Lopez", "Hill",
+      "Scott", "Green", "Adams", "Baker", "Nelson", "Carter", "Mitchell", "Roberts", "Turner", "Phillips",
+      "Campbell", "Parker", "Evans", "Edwards", "Collins", "Stewart", "Morris", "Rogers", "Reed", "Cook"
+    ]
+  },
+  "config": {
+    "cardsPerTeam": 300,
+    "startingCoins": 500,
+    "dailyBonus": 50,
+    "standardPackPrice": 100,
+    "standardPackSize": 5,
+    "rarityOdds": {
+      "common": 70,
+      "rare": 20,
+      "epic": 8,
+      "legendary": 2
+    }
+  }
+}
