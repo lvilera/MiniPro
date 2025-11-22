@@ -19,3 +19,15 @@ Thumbs.db
 # Build outputs
 dist/
 build/
+out/
+
+# Capacitor
+android/
+ios/
+.capacitor/
+
+# Electron
+electron-dist/
+
+# PWA Cache
+.cache/

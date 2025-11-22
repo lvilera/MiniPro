@@ -1084,6 +1084,26 @@ function handleDrop(e) {
 }
 
 // ============================================================
+// SERVICE WORKER REGISTRATION (PWA)
+// ============================================================
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then((registration) => {
+                console.log('ServiceWorker registered:', registration.scope);
+
+                // Check for updates periodically
+                setInterval(() => {
+                    registration.update();
+                }, 60000); // Check every minute
+            })
+            .catch((error) => {
+                console.log('ServiceWorker registration failed:', error);
+            });
+    });
+}
+
+// ============================================================
 // START THE APP
 // ============================================================
 document.addEventListener('DOMContentLoaded', init);

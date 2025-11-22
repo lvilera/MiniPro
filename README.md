@@ -198,6 +198,31 @@ Edit `data.json` to customize:
 - [ ] Multiplayer features
 - [ ] Backend integration
 
+## 📱 Native Apps
+
+Want to convert this to a native mobile or desktop app? We've got you covered!
+
+### Available Options:
+
+1. **PWA (Progressive Web App)** - ⭐ Easiest
+   - Works on all platforms
+   - Installable from browser
+   - Already configured!
+   - See: `NATIVE_APP_GUIDE.md`
+
+2. **Capacitor (Mobile Apps)** - iOS & Android
+   - Native mobile apps
+   - App Store & Play Store ready
+   - `npm run capacitor:add:android`
+   - See: `NATIVE_APP_GUIDE.md`
+
+3. **Electron (Desktop Apps)** - Windows, Mac, Linux
+   - Professional desktop apps
+   - `npm run electron`
+   - See: `NATIVE_APP_GUIDE.md`
+
+**📖 Complete Guide:** See [NATIVE_APP_GUIDE.md](NATIVE_APP_GUIDE.md) for detailed instructions!
+
 ## 📝 License
 
 MIT License - Feel free to use and modify for your own projects.

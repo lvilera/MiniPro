@@ -1,0 +1,26 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#E94F64" rx="80"/>
+
+  <!-- Card shape -->
+  <g transform="translate(106, 96)">
+    <!-- Card background -->
+    <rect x="0" y="0" width="300" height="420" fill="#FFFFFF" rx="20" stroke="#FFD700" stroke-width="8"/>
+
+    <!-- Card number -->
+    <text x="150" y="120" font-family="Arial, sans-serif" font-size="120" font-weight="bold"
+          fill="#E94F64" text-anchor="middle">#1</text>
+
+    <!-- Card detail lines -->
+    <rect x="40" y="180" width="220" height="12" fill="#E94F64" opacity="0.3" rx="6"/>
+    <rect x="40" y="210" width="180" height="12" fill="#E94F64" opacity="0.3" rx="6"/>
+
+    <!-- Star decoration -->
+    <polygon points="150,260 165,295 202,300 176,325 183,362 150,343 117,362 124,325 98,300 135,295"
+             fill="#FFD700"/>
+
+    <!-- Bottom text area -->
+    <rect x="40" y="370" width="220" height="8" fill="#E94F64" opacity="0.2" rx="4"/>
+    <rect x="40" y="390" width="140" height="8" fill="#E94F64" opacity="0.2" rx="4"/>
+  </g>
+</svg>
