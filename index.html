@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sports Card Collection Album - Collect and organize your favorite sports cards" />
+    <title>Sports Card Album — Pack Opening Edition</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Currency Bar (Always Visible) -->
+<div id="currency-bar" role="status" aria-live="polite">
+    <div class="currency-item">
+        <div class="coin-icon" aria-hidden="true">$</div>
+        <span class="currency-amount" id="coin-display" aria-label="Current coins">500</span>
+    </div>
+</div>
+
+<!-- ================================================== -->
+<!-- DASHBOARD PAGE -->
+<!-- ================================================== -->
+<div id="dashboard-page">
+    <div id="dashboard-sidebar" role="navigation" aria-label="Sport filter and store">
+        <button class="store-button" id="store-button" aria-label="Open store">
+            <span aria-hidden="true">🛒</span> STORE
+        </button>
+        <div class="sidebar-divider" aria-hidden="true"></div>
+        <div class="sport-button active" data-sport="all" role="button" tabindex="0" aria-pressed="true">
+            ALL SPORTS
+        </div>
+        <div class="sport-button" data-sport="MLB" role="button" tabindex="0" aria-pressed="false">
+            <span aria-hidden="true">⚾</span> BASEBALL
+        </div>
+        <div class="sport-button" data-sport="NBA" role="button" tabindex="0" aria-pressed="false">
+            <span aria-hidden="true">🏀</span> BASKETBALL
+        </div>
+        <div class="sport-button" data-sport="NHL" role="button" tabindex="0" aria-pressed="false">
+            <span aria-hidden="true">🏒</span> HOCKEY
+        </div>
+    </div>
+
+    <main id="dashboard-main">
+        <header id="dashboard-header">
+            <h1><span aria-hidden="true">⚾</span> Sports Card Collection <span aria-hidden="true">⚾</span></h1>
+            <div id="stats-panel" role="region" aria-label="Collection statistics">
+                <div class="stat-item">Total Cards: <span id="total-cards">0</span></div>
+                <div class="stat-item">Unique Teams: <span id="unique-teams">0</span></div>
+                <div class="stat-item">Completion: <span id="completion-rate">0%</span></div>
+            </div>
+        </header>
+
+        <div id="team-select-grid" role="region" aria-label="Team selection">
+            <!-- Teams will be dynamically populated -->
+        </div>
+    </main>
+</div>
+
+<!-- ================================================== -->
+<!-- STORE MODAL -->
+<!-- ================================================== -->
+<div id="store-modal" role="dialog" aria-modal="true" aria-labelledby="store-title" aria-hidden="true">
+    <div id="store-content">
+        <button id="close-store" aria-label="Close store">✕</button>
+        <h2 id="store-title" class="store-title">🛒 CARD STORE</h2>
+
+        <div class="pack-option" id="buy-standard-pack" role="button" tabindex="0" aria-label="Buy standard pack for 100 coins">
+            <div class="pack-info">
+                <h3>Standard Pack</h3>
+                <p>5 random cards from all teams</p>
+                <p style="margin-top: 5px; font-size: 0.85em;">70% Common, 20% Rare, 8% Epic, 2% Legendary</p>
+            </div>
+            <div class="pack-price" aria-label="Price: 100 coins">100 💰</div>
+        </div>
+
+        <div class="pack-option disabled" style="opacity: 0.5; cursor: not-allowed;" aria-disabled="true">
+            <div class="pack-info">
+                <h3>Premium Pack (Coming Soon)</h3>
+                <p>10 cards with better odds</p>
+            </div>
+            <div class="pack-price">250 💰</div>
+        </div>
+
+        <!-- Promo Code Section -->
+        <div class="promo-section">
+            <h3 class="promo-title">
+                <span aria-hidden="true">🎟️</span> PROMO CODE
+            </h3>
+            <p class="promo-description">
+                Have a sponsor code? Enter it below to claim your free cards!
+            </p>
+            <div class="promo-input-container">
+                <input
+                    type="text"
+                    id="promo-code-input"
+                    placeholder="Enter code (e.g. COKE-NBA-2024)"
+                    class="promo-input"
+                    aria-label="Promo code input"
+                />
+                <button
+                    id="redeem-code-button"
+                    class="promo-button"
+                    aria-label="Redeem promo code"
+                >
+                    REDEEM
+                </button>
+            </div>
+            <div id="promo-message" class="promo-message" role="status" aria-live="polite"></div>
+
+            <!-- Sample Codes Display -->
+            <div class="demo-codes">
+                <p class="demo-codes-label">
+                    <strong>Demo Codes (Try These!):</strong>
+                </p>
+                <div class="demo-codes-grid">
+                    <div class="demo-code">COKE-NBA-2024</div>
+                    <div class="demo-code-desc">5 Basketball cards</div>
+                    <div class="demo-code">NIKE-MLB-PROMO</div>
+                    <div class="demo-code-desc">5 Baseball cards</div>
+                    <div class="demo-code">TIMHORTONS-NHL</div>
+                    <div class="demo-code-desc">5 Hockey cards</div>
+                    <div class="demo-code">GATORADE-LEGEND</div>
+                    <div class="demo-code-desc">3 cards, 1 guaranteed rare+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================================================== -->
+<!-- PACK OPENING MODAL -->
+<!-- ================================================== -->
+<div id="pack-opening-modal" role="dialog" aria-modal="true" aria-hidden="true"></div>
+
+<!-- ================================================== -->
+<!-- ALBUM PAGE -->
+<!-- ================================================== -->
+<div id="app-page">
+    <aside id="left-sidebar" role="navigation" aria-label="Team selection">
+        <button class="store-button" id="store-button-album" aria-label="Open store">
+            <span aria-hidden="true">🛒</span> STORE
+        </button>
+        <div class="sidebar-divider" aria-hidden="true"></div>
+        <h2>Teams</h2>
+        <div id="logo-list" role="list">
+            <!-- Dynamically populated -->
+        </div>
+    </aside>
+
+    <div id="page-container">
+        <header id="header-bar">
+            <div id="current-league-header" role="heading" aria-level="1">Select a Team</div>
+            <button id="back-to-dashboard" aria-label="Return to dashboard">← Back to Dashboard</button>
+        </header>
+
+        <div id="filter-bar" role="search">
+            <label for="search-input" class="sr-only">Search cards</label>
+            <input type="text" id="search-input" placeholder="Search cards..." aria-label="Search cards by name">
+
+            <label for="filter-select" class="sr-only">Filter cards</label>
+            <select id="filter-select" aria-label="Filter card display">
+                <option value="all">All Cards</option>
+                <option value="placed">Placed Cards</option>
+                <option value="empty">Empty Slots</option>
+            </select>
+        </div>
+
+        <main id="main-content">
+            <div id="grid-panel">
+                <div id="the-grid" role="grid" aria-label="Card collection grid"></div>
+            </div>
+
+            <section id="user-strip-panel" role="region" aria-label="Your card inventory">
+                <h3>Your Cards</h3>
+                <div id="user-cards" role="list" aria-label="Available cards"></div>
+            </section>
+        </main>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script src="app.js"></script>
+</body>
+</html>

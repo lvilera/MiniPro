@@ -1,0 +1,40 @@
+{
+  "name": "sports-card-album",
+  "version": "2.0.0",
+  "description": "Sports Card Collection Album - Pack Opening Edition",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx http-server -p 8080 -c-1",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint app.js",
+    "lint:fix": "eslint app.js --fix",
+    "build": "npm run lint && npm run test",
+    "serve": "npx http-server -p 8080"
+  },
+  "keywords": [
+    "sports",
+    "cards",
+    "collection",
+    "game",
+    "pack-opening"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "collectCoverageFrom": [
+      "app.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  }
+}
